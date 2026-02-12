@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/api/members', memberRoutes);
-app.use('/api/schedule', scheduleRoutes);
+app.use('/api/schedules', scheduleRoutes);
 
 // MongoDB 연결
 // 참고: MongoDB Atlas 연결 문자열 형식은 mongodb+srv://username:password@cluster.mongodb.net/databaseName
@@ -67,7 +67,7 @@ process.on('SIGINT', async () => {
 
 // 라우트
 app.use('/api/members', memberRoutes);
-app.use('/api/schedule', scheduleRoutes);
+app.use('/api/schedules', scheduleRoutes);
 
 // 기본 라우트
 app.get('/', (req, res) => {

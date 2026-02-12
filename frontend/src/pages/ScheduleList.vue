@@ -70,7 +70,7 @@
 <script setup>
 import { ref, onMounted, computed, watch } from 'vue'
 import { useRouter } from 'vue-router'
-import { getSchedules, deleteSchedule } from '@/api/schedule'
+import { getSchedules, deleteSchedule } from '@/api/schedules'
 
 const router = useRouter()
 const lists = ref([])
@@ -79,8 +79,12 @@ const pageSize = 10
 const currentPage = ref(1)
 
 const load = async () => {
-  const res = await getSchedules()
-  lists.value = res.data
+  try {
+    const res = await getSchedules()
+    lists.value = res.data
+  } catch {
+    lists.value = []
+  }
 }
 
 const goEdit = (id) => {

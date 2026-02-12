@@ -11,9 +11,7 @@ const request = async (url, options = {}) => {
   const res = await fetch(`${API_BASE_URL}${url}`, {
     headers: { 'Content-Type': 'application/json' },
     ...options
-  }
-)
-  
+  })
   const data = await res.json()
   if (!res.ok) throw new Error(data.message || 'API 오류')
   return data

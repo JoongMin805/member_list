@@ -131,7 +131,7 @@
 <script setup>
 import { ref, onMounted, computed, watch } from 'vue'
 import { getMembers, deleteMember } from '@/api/members'
-import { getSchedules } from '@/api/schedule'
+import { getSchedules } from '@/api/schedules'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
@@ -147,10 +147,17 @@ const currentPage = ref(1)
 
 
 const load = async () => {
-  const [resMembers, resSchedule] = await Promise.all([getMembers(), getSchedules()])
-  members.value = resMembers.data
-  originMembers.value = [...resMembers.data]
-  schedule.value = resSchedule.data
+  try {
+    const resMembers = await getMembers()
+    members.value = resMembers.data
+    originMembers.value = [...resMembers.data]
+  } catch {}
+  try {
+    const resSchedule = await getSchedules()
+    schedule.value = resSchedule.data
+  } catch {
+    schedule.value = []
+  }
 }
 
 const goEdit = (id) => {

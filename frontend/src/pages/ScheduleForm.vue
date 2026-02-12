@@ -44,7 +44,7 @@
 import { ref, reactive, computed, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { getMembers } from '@/api/members'
-import { getSchedule, createSchedule, updateSchedule } from '@/api/schedule'
+import { getSchedule, createSchedule, updateSchedule } from '@/api/schedules'
 import { VueDatePicker } from '@vuepic/vue-datepicker';
 import '@vuepic/vue-datepicker/dist/main.css'
 
