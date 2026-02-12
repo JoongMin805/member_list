@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+    <defs>
+        <clipPath id="54rfd11e2a">
+            <path data-name="사각형 1726" style="fill:none" d="M0 0h20v20H0z"/>
+        </clipPath>
+    </defs>
+    <g data-name="그룹 790" transform="translate(4 4)" style="clip-path:url(#54rfd11e2a)">
+        <g data-name="사각형 1725" transform="translate(0 3)" style="stroke:#797979;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none">
+            <rect width="20" height="17" rx="2" style="stroke:none"/>
+            <rect x=".75" y=".75" width="18.5" height="15.5" rx="1.25" style="fill:none"/>
+        </g>
+        <path data-name="선 16" transform="translate(1.5 8.49)" style="stroke:#797979;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M18 0H0"/>
+        <g data-name="그룹 794">
+            <path data-name="선 25" transform="translate(14 2)" style="stroke:#797979;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 3V0"/>
+            <path data-name="선 24" transform="translate(6 2)" style="stroke:#797979;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 3V0"/>
+        </g>
+        <g data-name="그룹 1002" transform="translate(-418 -1477)">
+            <rect data-name="사각형 16685" width="2" height="2" rx="1" transform="translate(423 1488)" style="fill:#797979"/>
+            <rect data-name="사각형 16686" width="2" height="2" rx="1" transform="translate(423 1491)" style="fill:#797979"/>
+            <rect data-name="사각형 16687" width="2" height="2" rx="1" transform="translate(427 1488)" style="fill:#797979"/>
+            <rect data-name="사각형 16688" width="2" height="2" rx="1" transform="translate(427 1491)" style="fill:#797979"/>
+            <rect data-name="사각형 16690" width="2" height="2" rx="1" transform="translate(431 1491)" style="fill:#797979"/>
+            <rect data-name="사각형 16689" width="2" height="2" rx="1" transform="translate(431 1488)" style="fill:#797979"/>
+        </g>
+    </g>
+</svg>

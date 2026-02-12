@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34">
+    <defs>
+        <clipPath id="nx969h6s4a">
+            <path transform="translate(14 19)" style="fill:none" d="M0 0h34v34H0z"/>
+        </clipPath>
+    </defs>
+    <path style="fill:none" d="M0 0h34v34H0z"/>
+    <g data-name="마스크 그룹 149" transform="translate(-14 -19)" style="clip-path:url(#nx969h6s4a)">
+        <path d="M29.8 25a8.8 8.8 0 1 1-8.8 8.8 8.81 8.81 0 0 1 8.8-8.8zm0 15.6a6.8 6.8 0 1 0-6.8-6.8 6.808 6.808 0 0 0 6.8 6.8z"/>
+        <path d="M41.875 46.875a1 1 0 0 1-.707-.293l-6.375-6.375a1 1 0 0 1 0-1.414 1 1 0 0 1 1.414 0l6.375 6.375a1 1 0 0 1-.707 1.707z"/>
+    </g>
+</svg>
