@@ -9,7 +9,7 @@ const ParticipantSchema = new mongoose.Schema(
   { _id: false }
 );
 
-const mlistSchema = new mongoose.Schema(
+const scheduleSchema = new mongoose.Schema(
   {
     title: { type: String, required: true },
     date: { type: String },
@@ -18,4 +18,4 @@ const mlistSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.model("Mlist", mlistSchema);
+export default mongoose.model("Schedule", scheduleSchema);

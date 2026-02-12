@@ -3,7 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import { connectDB } from "./db.js";
 import Member from "./models/Member.js";
-import Mlist from "./models/Mlist.js";
+import Schedule from "./models/Schedule.js";
 
 dotenv.config();
 
@@ -112,15 +112,15 @@ app.post("/api/members/init-participation", async (req, res) => {
 });
 
 // 모임 목록 조회
-app.get("/api/mlists", async (_req, res) => {
-  const lists = await Mlist.find().sort({ createdAt: -1 });
+app.get("/api/schedule", async (_req, res) => {
+  const lists = await Schedule.find().sort({ createdAt: -1 });
   res.json({ success: true, data: lists });
 });
 
 // 모임 단건 조회
-app.get("/api/mlists/:id", async (req, res) => {
+app.get("/api/schedule/:id", async (req, res) => {
   try {
-    const item = await Mlist.findById(req.params.id);
+    const item = await Schedule.findById(req.params.id);
     if (!item) return res.status(404).json({ success: false, message: "모임 없음" });
     res.json({ success: true, data: item });
   } catch (err) {
@@ -129,10 +129,10 @@ app.get("/api/mlists/:id", async (req, res) => {
 });
 
 // 모임 생성
-app.post("/api/mlists", async (req, res) => {
+app.post("/api/schedule", async (req, res) => {
   try {
     const { title, date, participants } = req.body;
-    const item = new Mlist({ title, date, participants });
+    const item = new Schedule({ title, date, participants });
     await item.save();
     res.status(201).json({ success: true, data: item });
   } catch (err) {
@@ -142,10 +142,10 @@ app.post("/api/mlists", async (req, res) => {
 });
 
 // 모임 수정
-app.put("/api/mlists/:id", async (req, res) => {
+app.put("/api/schedule/:id", async (req, res) => {
   try {
     const { title, date, participants } = req.body;
-    const updated = await Mlist.findByIdAndUpdate(
+    const updated = await Schedule.findByIdAndUpdate(
       req.params.id,
       { title, date, participants },
       { new: true, runValidators: true }
@@ -158,9 +158,9 @@ app.put("/api/mlists/:id", async (req, res) => {
 });
 
 // 모임 삭제
-app.delete("/api/mlists/:id", async (req, res) => {
+app.delete("/api/schedule/:id", async (req, res) => {
   try {
-    const deleted = await Mlist.findByIdAndDelete(req.params.id);
+    const deleted = await Schedule.findByIdAndDelete(req.params.id);
     if (!deleted) return res.status(404).json({ success: false, message: "모임 없음" });
     res.json({ success: true, data: deleted });
   } catch (err) {
