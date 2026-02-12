@@ -112,13 +112,13 @@ app.post("/api/members/init-participation", async (req, res) => {
 });
 
 // 모임 목록 조회
-app.get("/api/schedule", async (_req, res) => {
+app.get("/api/schedules", async (_req, res) => {
   const lists = await Schedule.find().sort({ createdAt: -1 });
   res.json({ success: true, data: lists });
 });
 
 // 모임 단건 조회
-app.get("/api/schedule/:id", async (req, res) => {
+app.get("/api/schedules/:id", async (req, res) => {
   try {
     const item = await Schedule.findById(req.params.id);
     if (!item) return res.status(404).json({ success: false, message: "모임 없음" });
@@ -129,7 +129,7 @@ app.get("/api/schedule/:id", async (req, res) => {
 });
 
 // 모임 생성
-app.post("/api/schedule", async (req, res) => {
+app.post("/api/schedules", async (req, res) => {
   try {
     const { title, date, participants } = req.body;
     const item = new Schedule({ title, date, participants });
@@ -142,7 +142,7 @@ app.post("/api/schedule", async (req, res) => {
 });
 
 // 모임 수정
-app.put("/api/schedule/:id", async (req, res) => {
+app.put("/api/schedules/:id", async (req, res) => {
   try {
     const { title, date, participants } = req.body;
     const updated = await Schedule.findByIdAndUpdate(
@@ -158,7 +158,7 @@ app.put("/api/schedule/:id", async (req, res) => {
 });
 
 // 모임 삭제
-app.delete("/api/schedule/:id", async (req, res) => {
+app.delete("/api/schedules/:id", async (req, res) => {
   try {
     const deleted = await Schedule.findByIdAndDelete(req.params.id);
     if (!deleted) return res.status(404).json({ success: false, message: "모임 없음" });
